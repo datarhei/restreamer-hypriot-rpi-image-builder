@@ -1,0 +1,17 @@
+[Unit]
+Description=Datarhei/Restreamer
+After=restreamer-env.service
+Requires=restreamer-env.service
+
+[Service]
+Restart=always
+RestartSec=20
+TimeoutStartSec=0
+EnvironmentFile=/etc/restreamer.env
+ExecStartPre=/bin/bash /root/restreamer-cleanup.sh
+ExecStartPre=/usr/bin/docker pull datarhei/restreamer-${ARM_VERSION}:latest
+ExecStart=/usr/bin/docker run --name restreamer --privileged -p ${RESTREAMER_HTTP_PORT}:8080 -v /mnt/restreamer/db:/restreamer/db -v /opt/vc:/opt/vc -e RESTREAMER_USERNAME=${RESTREAMER_USERNAME} -e RESTREAMER_PASSWORD=${RESTREAMER_PASSWORD} -e MODE=${RESTREAMER_MODE} -e SNAPSHOT_REFRESH_INTERVAL=${RESTREAMER_SNAPSHOT_REFRESH_INTERVAL} datarhei/restreamer-${ARM_VERSION}:latest
+ExecStop=/usr/bin/docker stop restreamer
+
+[Install]
+WantedBy=multi-user.target

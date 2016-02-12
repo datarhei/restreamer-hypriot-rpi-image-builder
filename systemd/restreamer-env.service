@@ -1,0 +1,13 @@
+[Unit]
+Description=Datarhei/Restreamer enviroment builder
+After=docker.service
+Requires=docker.service
+
+[Service]
+Restart=on-failure
+RestartSec=20
+TimeoutStartSec=0
+ExecStart=/usr/bin/sudo bash /root/restreamer-env.sh
+
+[Install]
+WantedBy=multi-user.target

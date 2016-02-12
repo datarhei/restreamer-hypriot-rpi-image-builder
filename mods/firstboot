@@ -1,0 +1,6 @@
+echo 'Enabling and starting Datarhei/Restreamer services' >> /dev/kmsg
+systemctl enable restreamer-env.service
+systemctl start restreamer-env.service
+sleep 5
+systemctl enable restreamer.service
+systemctl start restreamer.service

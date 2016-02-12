@@ -1,0 +1,6 @@
+# Datarhei/Restreamer init parameter:
+restreamer_username=admin
+restreamer_password=datarhei
+restreamer_http_port=8080
+restreamer_raspicam=disabled
+restreamer_snapshot_refresh_interval=60000
