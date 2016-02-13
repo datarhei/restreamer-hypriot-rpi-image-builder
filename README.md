@@ -4,7 +4,11 @@ Documentation building the "Restreamer Hypriot Rpi Image" - Only! for Raspberry 
 *Latest version of the "Restreamer Hypriot Rpi Image" can be downloaded here:*  <a target="_blank" href="https://datarhei.org/downloads/hypriot/restreamer-hypriot-rpi-latest.img.zip">https://datarhei.org/downloads/hypriot/restreamer-hypriot-rpi-latest.img.zip</a>  
 
 ## Image Releases
-* 20160212-01 (<a target="_blank" href="https://datarhei.org/downloads/hypriot/restreamer-hypriot-rpi-20160212-01.img.zip">Download</a>, <a target="_blank" href="https://datarhei.org/downloads/hypriot/SHASUM256.txt">SHASUM256</a>)
+
+* **20160213-02** (<a target="_blank" href="https://datarhei.org/downloads/hypriot/restreamer-hypriot-rpi-20160213-02.img.zip">Download</a>, <a target="_blank" href="https://datarhei.org/downloads/hypriot/SHASUM256.txt">SHASUM256</a>)
+  * better docker cleanup handling 
+
+* **20160212-01** (<a target="_blank" href="https://datarhei.org/downloads/hypriot/restreamer-hypriot-rpi-20160212-01.img.zip">Download</a>, <a target="_blank" href="https://datarhei.org/downloads/hypriot/SHASUM256.txt">SHASUM256</a>)
   * Hypriot Docker Image for Raspberry Pi - Version 0.6.1 Hector
   * Hypriot Docker Debian Packages for Raspberry Pi - Version 1.10.1
   * Restreamer parameter (tested with Restreamer v0.1.0-RC5)
@@ -20,7 +24,7 @@ Documentation building the "Restreamer Hypriot Rpi Image" - Only! for Raspberry 
     * auto. selecting armv6l/armv7l docker image
 
 ## Installation/Usage
-Instructions how to copy the "Restreamer Hypriot Rpi Image" on memory card and how to use it will be published soon on <a target="_blank" href="https://datarhei.github.io/restreamer/">https://datarhei.github.io/restreamer/</a>. As we can say so far install like every other iso with --dd or windisk32 and configure the Restreamer parameter in occidentalis.txt.
+Instructions how to copy the "Restreamer Hypriot Rpi Image" on memory card and how to use it will be published soon on <a target="_blank" href="https://datarhei.github.io/restreamer/">https://datarhei.github.io/restreamer/</a>. As we can say so far install like every other iso with dd or windisk32 and configure the Restreamer parameter in occidentalis.txt.
 
 ## How to create "Restreamer Hypriot Rpi Image" with OSX and Linux
 #####If you want to build your own image (e.g. with custom modifications), our guide below will help.
