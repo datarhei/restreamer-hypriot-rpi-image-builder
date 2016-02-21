@@ -5,6 +5,13 @@ Documentation building the "Restreamer Hypriot Rpi Image" - Only! for Raspberry 
 
 ## Image Releases
 
+* **20160221-03** (<a target="_blank" href="https://datarhei.org/downloads/hypriot/restreamer-hypriot-rpi-20160221-03.img.zip">Download</a>, <a target="_blank" href="https://datarhei.org/downloads/hypriot/SHASUM256.txt">SHASUM256</a>)
+  * limited Journald logs to 50MB
+  * Restreamer parameter (tested with Restreamer v0.1.0-RC5)
+    * logger_level (default 1)
+  * systemd services
+    * docker cleanup timer (every 48h)
+
 * **20160213-02** (<a target="_blank" href="https://datarhei.org/downloads/hypriot/restreamer-hypriot-rpi-20160213-02.img.zip">Download</a>, <a target="_blank" href="https://datarhei.org/downloads/hypriot/SHASUM256.txt">SHASUM256</a>)
   * better docker cleanup handling 
 
