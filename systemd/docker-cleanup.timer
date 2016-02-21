@@ -1,0 +1,11 @@
+[Unit]
+Description=Docker Cleanup
+After=restreamer.service
+Requires=restreamer.service
+
+[Timer]
+OnBootSec=10min
+OnUnitActiveSec=48h
+
+[Install]
+WantedBy=multi-user.target

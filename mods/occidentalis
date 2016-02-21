@@ -4,3 +4,4 @@ restreamer_password=datarhei
 restreamer_http_port=8080
 restreamer_raspicam=disabled
 restreamer_snapshot_refresh_interval=60000
+restreamer_logger_level=1

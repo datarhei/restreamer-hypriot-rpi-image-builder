@@ -4,3 +4,6 @@ systemctl start restreamer-env.service
 sleep 5
 systemctl enable restreamer.service
 systemctl start restreamer.service
+sleep 5
+systemctl enable docker-cleanup.timer
+systemctl start docker-cleanup.timer

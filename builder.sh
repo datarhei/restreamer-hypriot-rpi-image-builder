@@ -10,6 +10,7 @@ BOOT_PATH=$1
 ROOT_PATH=$2
 
 # init parameter by "occidentalis.txt"
+sed -i 's/black-pearl/restreamer/g' $BOOT_PATH/occidentalis.txt
 cat mods/occidentalis >> $BOOT_PATH/occidentalis.txt
 
 # init systemd services by "firstboot.sh"
@@ -17,5 +18,10 @@ cat mods/firstboot >> $ROOT_PATH/root/firstboot.sh
 
 # add systemd config
 cp systemd/*.service $ROOT_PATH/lib/systemd/system/
+cp systemd/*.timer $ROOT_PATH/lib/systemd/system/
 cp systemd/*.sh $ROOT_PATH/root/
 chmod +x $ROOT_PATH/root/*.sh
+
+# limit journald
+sed -i 's/#SystemMaxUse=/SystemMaxUse=50MB/g' $ROOT_PATH/etc/systemd/journald.conf
+sed -i 's/#RuntimeMaxUse=/RuntimeMaxUse=50M/g' $ROOT_PATH/etc/systemd/journald.conf
