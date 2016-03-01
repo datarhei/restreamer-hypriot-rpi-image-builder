@@ -5,6 +5,9 @@ Documentation building the "Restreamer Hypriot Rpi Image" - Only! for Raspberry 
 
 ## Image Releases
 
+* **20160301-04** (<a target="_blank" href="https://datarhei.org/downloads/hypriot/restreamer-hypriot-rpi-20160301-04.img.zip">Download</a>, <a target="_blank" href="https://datarhei.org/downloads/hypriot/SHASUM256.txt">SHASUM256</a>)
+  * Hypriot Docker Debian Packages for Raspberry Pi - Version 1.10.2
+
 * **20160221-03** (<a target="_blank" href="https://datarhei.org/downloads/hypriot/restreamer-hypriot-rpi-20160221-03.img.zip">Download</a>, <a target="_blank" href="https://datarhei.org/downloads/hypriot/SHASUM256.txt">SHASUM256</a>)
   * limited Journald logs to 50MB
   * Restreamer parameter (tested with Restreamer v0.1.0-RC5)
