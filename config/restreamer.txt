@@ -1,0 +1,16 @@
+# Datarhei/Restreamer init parameter:
+
+restreamer_username=admin
+restreamer_password=datarhei
+restreamer_http_port=8080
+restreamer_snapshot_refresh_interval=60000
+restreamer_logger_level=1
+
+restreamer_raspicam=disabled
+restreamer_raspicam_width=1280
+restreamer_raspicam_height=720
+restreamer_raspicam_fps=25
+restreamer_raspicam_bitrate=500000
+
+restreamer_docker_image=restreamer
+restreamer_docker_image_tag=latest

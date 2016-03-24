@@ -10,8 +10,8 @@ TimeoutStartSec=0
 EnvironmentFile=/etc/restreamer.service.env
 ExecStartPre=-/usr/bin/docker kill restreamer
 ExecStartPre=-/usr/bin/docker rm restreamer
-ExecStartPre=/usr/bin/docker pull datarhei/restreamer-${ARM_VERSION}:latest
-ExecStart=/usr/bin/docker run --name restreamer --privileged -p ${RESTREAMER_HTTP_PORT}:8080 -v /mnt/restreamer/db:/restreamer/db -v /opt/vc:/opt/vc --env-file /etc/restreamer.env datarhei/restreamer-${ARM_VERSION}:latest
+ExecStartPre=/usr/bin/docker pull datarhei/${RS_DOCKER_IMAGE}-${ARCH}:${RS_DOCKER_IMAGE_TAG}
+ExecStart=/usr/bin/docker run --name restreamer --privileged -p ${RS_HTTP_PORT}:8080 -v /mnt/restreamer/db:/restreamer/db -v /opt/vc:/opt/vc --env-file /etc/restreamer.env datarhei/${RS_DOCKER_IMAGE}-${ARCH}:${RS_DOCKER_IMAGE_TAG}
 ExecStop=/usr/bin/docker stop restreamer
 
 [Install]

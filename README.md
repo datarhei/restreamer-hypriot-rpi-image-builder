@@ -1,9 +1,22 @@
 # Restreamer Hypriot Rpi Image Builder
-Documentation building the "Restreamer Hypriot Rpi Image" - Only! for Raspberry Pi 1/2/Zero
+Documentation building the "Restreamer Hypriot Rpi Image" - Only! for Raspberry Pi 1/2/3/Zero
 
 *Latest version of the "Restreamer Hypriot Rpi Image" can be downloaded here:*  <a target="_blank" href="https://datarhei.org/downloads/hypriot/restreamer-hypriot-rpi-latest.img.zip">https://datarhei.org/downloads/hypriot/restreamer-hypriot-rpi-latest.img.zip</a>  
 
 ## Image Releases
+
+* **20160324-05** (<a target="_blank" href="https://datarhei.org/downloads/hypriot/restreamer-hypriot-rpi-20160324-05.img.zip">Download</a>, <a target="_blank" href="https://datarhei.org/downloads/hypriot/SHASUM256.txt">SHASUM256</a>)
+  * Hypriot Docker Image for Raspberry Pi - Version 0.7.0 Berry (beta)
+  * Hypriot Docker Debian Packages for Raspberry Pi - Version 1.10.3
+  * Restreamer parameter (tested with Restreamer v0.1.0-rc.7)
+    * moved params to /boot/restreaner.txt
+    * fixed logger_level and optimized docker cleanup
+    * raspicam_width (default 1280)
+    * raspicam_height (default 720)
+    * raspicam_fps (default 25)
+    * raspicam_bitrate (default 500000)
+    * docker_image (default restreamer, cpu tag will be autoselected)
+    * docker_image_tag (default latest) 
 
 * **20160301-04** (<a target="_blank" href="https://datarhei.org/downloads/hypriot/restreamer-hypriot-rpi-20160301-04.img.zip">Download</a>, <a target="_blank" href="https://datarhei.org/downloads/hypriot/SHASUM256.txt">SHASUM256</a>)
   * Hypriot Docker Debian Packages for Raspberry Pi - Version 1.10.2

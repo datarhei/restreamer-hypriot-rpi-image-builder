@@ -9,9 +9,11 @@ BOOT_PATH=$1
 # set root-path
 ROOT_PATH=$2
 
-# init parameter by "occidentalis.txt"
+# edit hostname in "occidentalis.txt"
 sed -i 's/black-pearl/restreamer/g' $BOOT_PATH/occidentalis.txt
-cat mods/occidentalis >> $BOOT_PATH/occidentalis.txt
+
+# init parameter by "restreamer.txt"
+cat config/restreamer.txt > $BOOT_PATH/restreamer.txt
 
 # init systemd services by "firstboot.sh"
 cat mods/firstboot >> $ROOT_PATH/root/firstboot.sh

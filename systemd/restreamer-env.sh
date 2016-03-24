@@ -1,27 +1,42 @@
 #!/bin/bash
-
 # Datarhei/Restreamer env builder
 
-ARM_VERSION=$(uname -m | cut -c 1-6)
-RESTREAMER_USERNAME=$(grep "restreamer_username=" /boot/occidentalis.txt | cut -d '=' -f2)
-RESTREAMER_PASSWORD=$(grep "restreamer_password=" /boot/occidentalis.txt | cut -d '=' -f2)
-RESTREAMER_HTTP_PORT=$(grep "restreamer_http_port=" /boot/occidentalis.txt | cut -d '=' -f2)
-RESTREAMER_RASPICAM=$(grep "restreamer_raspicam=" /boot/occidentalis.txt | cut -d '=' -f2)
-RESTREAMER_SNAPSHOT_REFRESH_INTERVAL=$(grep "restreamer_snapshot_refresh_interval=" /boot/occidentalis.txt | cut -d '=' -f2)
-RESTREAMER_LOGGER_LEVEL=$(grep "restreamer_logger_level=" /boot/occidentalis.txt | cut -d '=' -f2)
+# restreamer docker env.
+ARCH=$(arch)
+RS_HTTP_PORT=$(grep "restreamer_http_port=" /boot/restreamer.txt | cut -d '=' -f2)
+RS_DOCKER_IMAGE=$(grep "restreamer_docker_image=" /boot/restreamer.txt | cut -d '=' -f2)
+RS_DOCKER_IMAGE_TAG=$(grep "restreamer_docker_image_tag=" /boot/restreamer.txt | cut -d '=' -f2)
 
-if [ "$RESTREAMER_RASPICAM" = "enabled" ]
+# restreamer env.
+RS_USERNAME=$(grep "restreamer_username=" /boot/restreamer.txt | cut -d '=' -f2)
+RS_PASSWORD=$(grep "restreamer_password=" /boot/restreamer.txt | cut -d '=' -f2)
+RS_LOGGER_LEVEL=$(grep "restreamer_logger_level=" /boot/restreamer.txt | cut -d '=' -f2)
+RS_SNAPSHOT_REFRESH_INTERVAL=$(grep "restreamer_snapshot_refresh_interval=" /boot/restreamer.txt | cut -d '=' -f2)
+RS_RASPICAM=$(grep "restreamer_raspicam=" /boot/restreamer.txt | cut -d '=' -f2)
+RS_RASPICAM_WIDTH=$(grep "restreamer_raspicam_width=" /boot/restreamer.txt | cut -d '=' -f2)
+RS_RASPICAM_HEIGHT=$(grep "restreamer_raspicam_height=" /boot/restreamer.txt | cut -d '=' -f2)
+RS_RASPICAM_FPS=$(grep "restreamer_raspicam_fps=" /boot/restreamer.txt | cut -d '=' -f2)
+RS_RASPICAM_BITRATE=$(grep "restreamer_raspicam_bitrate=" /boot/restreamer.txt | cut -d '=' -f2)
+
+if [ "$RS_RASPICAM" = "enabled" ]
 then
-  RESTREAMER_MODE=RASPICAM
+  MODE=RASPICAM
 else
-  RESTREAMER_MODE=DEFAULT
+  MODE=DEFAULT
 fi
 
-echo ARM_VERSION=$ARM_VERSION > /etc/restreamer.service.env
-echo RESTREAMER_HTTP_PORT=$RESTREAMER_HTTP_PORT >> /etc/restreamer.service.env
+# restreamer docker env.
+echo ARCH=$ARCH > /etc/restreamer.service.env
+echo RS_HTTP_PORT=$RS_HTTP_PORT >> /etc/restreamer.service.env
+echo RS_DOCKER_IMAGE=$RS_DOCKER_IMAGE >> /etc/restreamer.service.env
+echo RS_DOCKER_IMAGE_TAG=$RS_DOCKER_IMAGE_TAG >> /etc/restreamer.service.env
 
-echo RESTREAMER_USERNAME=$RESTREAMER_USERNAME > /etc/restreamer.env
-echo RESTREAMER_PASSWORD=$RESTREAMER_PASSWORD >> /etc/restreamer.env
-echo MODE=$RESTREAMER_MODE >> /etc/restreamer.env
-echo SNAPSHOT_REFRESH_INTERVAL=$RESTREAMER_SNAPSHOT_REFRESH_INTERVAL >> /etc/restreamer.env
-echo LOGGER_LEVEL=$RESTREAMER_LOGGER_LEVEL >> /etc/restreamer.env
+# restreamer env.
+echo RS_MODE=$RS_MODE > /etc/restreamer.env
+echo RS_USERNAME=$RS_USERNAME >> /etc/restreamer.env
+echo RS_PASSWORD=$RS_PASSWORD >> /etc/restreamer.env
+echo RS_SNAPSHOT_REFRESH_INTERVAL=$RS_SNAPSHOT_REFRESH_INTERVAL >> /etc/restreamer.env
+echo RS_RASPICAM_WIDTH=$RS_RASPICAM_WIDTH >> /etc/restreamer.env
+echo RS_RASPICAM_HEIGHT=$RS_RASPICAM_HEIGHT >> /etc/restreamer.env
+echo RS_RASPICAM_FPS=$RS_RASPICAM_FPS >> /etc/restreamer.env
+echo RS_RASPICAM_BITRATE=$RS_RASPICAM_BITRATE >> /etc/restreamer.env
