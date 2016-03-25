@@ -32,7 +32,7 @@ echo RS_DOCKER_IMAGE=$RS_DOCKER_IMAGE >> /etc/restreamer.service.env
 echo RS_DOCKER_IMAGE_TAG=$RS_DOCKER_IMAGE_TAG >> /etc/restreamer.service.env
 
 # restreamer env.
-echo RS_MODE=$RS_MODE > /etc/restreamer.env
+echo MODE=$MODE > /etc/restreamer.env
 echo RS_USERNAME=$RS_USERNAME >> /etc/restreamer.env
 echo RS_PASSWORD=$RS_PASSWORD >> /etc/restreamer.env
 echo RS_SNAPSHOT_REFRESH_INTERVAL=$RS_SNAPSHOT_REFRESH_INTERVAL >> /etc/restreamer.env

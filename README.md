@@ -5,6 +5,10 @@ Documentation building the "Restreamer Hypriot Rpi Image" - Only! for Raspberry 
 
 ## Image Releases
 
+* **20160325-06** (<a target="_blank" href="https://datarhei.org/downloads/hypriot/restreamer-hypriot-rpi-20160325-06.img.zip">Download</a>, <a target="_blank" href="https://datarhei.org/downloads/hypriot/SHASUM256.txt">SHASUM256</a>)
+  * Restreamer parameter (tested with Restreamer v0.1.0-rc.7)
+    * fixed MODE env
+
 * **20160324-05** (<a target="_blank" href="https://datarhei.org/downloads/hypriot/restreamer-hypriot-rpi-20160324-05.img.zip">Download</a>, <a target="_blank" href="https://datarhei.org/downloads/hypriot/SHASUM256.txt">SHASUM256</a>)
   * Hypriot Docker Image for Raspberry Pi - Version 0.7.0 Berry (beta)
   * Hypriot Docker Debian Packages for Raspberry Pi - Version 1.10.3
